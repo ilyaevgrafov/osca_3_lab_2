@@ -1,0 +1,13 @@
+# IDE
+.vscode
+.idea
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Other
+sample/
+drafts/
+draft.md
+notes.md
