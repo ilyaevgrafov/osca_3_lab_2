@@ -1,19 +1,19 @@
-execve("./inc/build/parent", ["./inc/build/parent"], 0x7ffdc9a6cab8 /* 62 vars */) = 0
+execve("./inc/build/parent", ["./inc/build/parent"], 0x7ffcc7d0b038 /* 49 vars */) = 0
 close(3)                                = 0
 read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0 \250\2\0\0\0\0\0"..., 832) = 832
 close(3)                                = 0
 pipe2([3, 4], 0)                        = 0
 pipe2([5, 6], 0)                        = 0
-pipe2([7, 8], 0)                        = 0
-clone(child_stack=NULL, flags=CLONE_CHILD_CLEARTID|CLONE_CHILD_SETTID|SIGCHLD, child_tidptr=0x7b0f97853a10) = 21877
-clone(child_stack=NULL, flags=CLONE_CHILD_CLEARTID|CLONE_CHILD_SETTID|SIGCHLD, child_tidptr=0x7b0f97853a10) = 21878
-write(2, "parent pid: 21876\n", 18)     = 18
-write(2, "child1 pid: 21877\n", 18)     = 18
-write(2, "child2 pid: 21878\n", 18)     = 18
+pipe2([8, 9], 0)                        = 0
+clone(child_stack=NULL, flags=CLONE_CHILD_CLEARTID|CLONE_CHILD_SETTID|SIGCHLD, child_tidptr=0x791ee1278a10) = 26486
+clone(child_stack=NULL, flags=CLONE_CHILD_CLEARTID|CLONE_CHILD_SETTID|SIGCHLD, child_tidptr=0x791ee1278a10) = 26487
+write(2, "parent pid: 26485\n", 18)     = 18
+write(2, "child1 pid: 26486\n", 18)     = 18
+write(2, "child2 pid: 26487\n", 18)     = 18
 close(3)                                = 0
 close(5)                                = 0
 close(6)                                = 0
-close(8)                                = 0
+close(9)                                = 0
 read(0, "H", 1)                         = 1
 read(0, "e", 1)                         = 1
 read(0, "l", 1)                         = 1
@@ -29,9 +29,15 @@ read(0, "d", 1)                         = 1
 read(0, "!", 1)                         = 1
 read(0, "\n", 1)                        = 1
 write(4, "Hello, World!", 13)           = 13
-read(7, "hello,_world!", 13)            = 13
+read(8, "hello,_world!", 13)            = 13
 write(1, "hello,_world!", 13)           = 13
 write(1, "\n", 1)                       = 1
-read(0, 0x7fff010cc217, 1)              = ? ERESTARTSYS (To be restarted if SA_RESTART is set)
---- SIGINT {si_signo=SIGINT, si_code=SI_KERNEL} ---
-+++ killed by SIGINT +++
+read(0, "", 1)                          = 0
+close(4)                                = 0
+close(8)                                = 0
+wait4(26486, NULL, 0, NULL)             = 26486
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_EXITED, si_pid=26486, si_uid=1000, si_status=0, si_utime=0, si_stime=0} ---
+wait4(26487, NULL, 0, NULL)             = 26487
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_EXITED, si_pid=26487, si_uid=1000, si_status=0, si_utime=0, si_stime=0} ---
+exit_group(0)                           = ?
++++ exited with 0 +++
