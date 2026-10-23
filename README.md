@@ -2,9 +2,7 @@
 
 Лабораторная работа по дисциплине «Операционные системы и архитектура компьютера».
 
-Вариант 13.
-
-Работа выполнена для Linux.
+**Вариант 13.** Работа выполнена в Ubuntu 26.04 LTS (WSL2, x86_64).
 
 ## Задание
 
@@ -26,7 +24,23 @@ make -C inc
 ./inc/build/parent
 ```
 
-## Сборка отчета
+## Трассировка системных вызовов
+
+Все вызовы (без фильтра):
+
+```bash
+strace -ff -o full-trace.log ./inc/build/parent
+```
+
+Характерные вызовы создания процессов и межпроцессного взаимодействия:
+
+```bash
+strace -ff -o trace.log \
+  -e trace=pipe2,clone,dup2,close,execve,read,write,wait4,exit_group \
+  ./inc/build/parent
+```
+
+## Сборка отчета (LaTeX)
 
 ```bash
 make pdf
