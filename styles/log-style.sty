@@ -1,5 +1,5 @@
 \usepackage[utf8]{inputenc}
-\usepackage[T2A]{fontenc}
+\usepackage[T2B]{fontenc}
 \usepackage[english,russian]{babel}
 
 \usepackage{geometry}
@@ -17,9 +17,7 @@
 
 \usepackage{nopageno}
 
-% The report must build with a standard TeX Live installation.  The
-% `tempora` font package is optional and is not present in minimal setups.
-% Computer Modern is used unless a different font is explicitly selected.
+% \usepackage{tempora}
 \renewcommand{\ttdefault}{cmtt}
 
 \usepackage{titlesec}
@@ -33,9 +31,12 @@
 
 \usepackage{amsmath}
 \usepackage{amssymb}
+\usepackage{hyperref}
 \usepackage{longtable}
 \usepackage[table]{xcolor}
 \usepackage{array}
+\usepackage{color}
+\usepackage{xcolor}
 
 \usepackage{hyperref}
 
@@ -60,6 +61,9 @@
 	numberstyle={\footnotesize},
 	extendedchars,
 	inputencoding=utf8}
+
+\def\@xobeysp{ }
+\def\verbatim@processline{\hspace{1.2cm}\raggedright\the\verbatim@line\par}
 
 \parindent=0pt
 \parskip=3pt

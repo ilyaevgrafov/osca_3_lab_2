@@ -162,7 +162,7 @@ int main(void) {
         close(child2_to_parent_pipe[0]);
         close(child2_to_parent_pipe[1]);
 
-        execl("./build/child1", "child1", NULL);
+        execl("./inc/build/child1", "child1", NULL);
 
         perror("execl child1");
         _exit(1);
@@ -206,7 +206,7 @@ int main(void) {
         close(child2_to_parent_pipe[0]);
         close(child2_to_parent_pipe[1]);
 
-        execl("./build/child2", "child2", NULL);
+        execl("./inc/build/child2", "child2", NULL);
 
         perror("execl child2");
         _exit(1);

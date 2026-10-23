@@ -16,16 +16,18 @@
 
 ## Сборка
 
-В папке inc:
-
 ```bash
-make
+make -C inc
 ```
 
 ## Запуск
 
-В папке inc:
+```bash
+./inc/build/parent
+```
+
+## Сборка отчета
 
 ```bash
-./build/parent
+make pdf
 ```
